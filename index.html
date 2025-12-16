@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DHF 开发指南</title>
+  <meta name="description" content="多语言工程规范聚合平台 · Java / Python / Go ... · 基于一线实践" />
+
+  <!-- Docsify 核心样式（Vue 主题，中文友好） -->
+  <link
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css"
+  />
+
+  <!-- 自定义样式优化 -->
+  <style>
+    :root {
+      --theme-color: #42b983;
+    }
+    .markdown-section h1,
+    .markdown-section h2 {
+      margin-top: 1.5em;
+    }
+    .app-name-link {
+      font-weight: bold;
+      color: var(--theme-color) !important;
+    }
+    /* 修复中文标点挤压 */
+    body {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">加载中...</div>
+
+  <script>
+    window.$docsify = {
+      // 基础配置
+      name: 'DHF 开发指南',
+      repo: 'https://github.com/denghuafeng/dhf-dev-guide', // 👈 替换为你的仓库地址
+      homepage: 'docs/README.md',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      auto2top: true,
+      themeColor: '#42b983',
+      notFoundPage: true,
+
+      // 搜索插件
+      search: {
+        maxAge: 86400000, // 1天缓存
+        paths: 'auto',
+        placeholder: '🔍 搜索规范...',
+        noData: '未找到结果',
+        depth: 3
+      },
+
+      // 代码复制
+      copyCode: {
+        buttonText: '复制',
+        errorText: '失败',
+        successText: '已复制'
+      },
+
+      // 图片查看器
+      imageViewer: {
+        imgSelector: '.markdown-section img'
+      }
+    };
+  </script>
+
+  <!-- Docsify 核心 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+  <!-- 插件：搜索 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+
+  <!-- 插件：代码块复制 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+
+  <!-- 插件：图片缩放 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-image-viewer@1"></script>
+
+  <!-- 可选：Mermaid 图表支持（取消注释启用） -->
+  <!--
+  <script src="//cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: false });
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-mermaid@2.0.0/dist/docsify-mermaid.js"></script>
+  -->
+
+  <!-- 可选：Google Analytics -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+</body>
+</html>
